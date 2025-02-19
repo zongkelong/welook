@@ -2,6 +2,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import enTranslation from './locales/en/translation.json';
 import jaTranslation from './locales/ja/translation.json';
+import zhTranslation from './locales/zh/translation.json';
 
 const resources = {
     en: {
@@ -10,11 +11,14 @@ const resources = {
     ja: {
         translation: jaTranslation,
     },
+    zh: {
+        translation: zhTranslation,
+    },
 };
 
 i18n.use(initReactI18next).init({
     resources,
-    lng: 'en',
+    lng: 'zh',
     interpolation: {
         escapeValue: false,
     },

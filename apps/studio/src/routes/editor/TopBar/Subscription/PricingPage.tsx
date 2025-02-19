@@ -176,13 +176,22 @@ export const PricingPage = observer(() => {
                                                             size="sm"
                                                             className="gap-2 text-foreground-secondary text-md"
                                                         >
-                                                            {i18n.language === 'en'
-                                                                ? 'English'
-                                                                : '日本語'}
+                                                            {i18n.language === 'zh'
+                                                                ? '简体中文'
+                                                                : i18n.language === 'en'
+                                                                  ? 'English'
+                                                                  : '日本語'}
                                                             <Icons.ChevronDown className="h-4 w-4" />
                                                         </Button>
                                                     </DropdownMenuTrigger>
                                                     <DropdownMenuContent align="end">
+                                                        <DropdownMenuItem
+                                                            onClick={() =>
+                                                                i18n.changeLanguage('zh')
+                                                            }
+                                                        >
+                                                            中文
+                                                        </DropdownMenuItem>
                                                         <DropdownMenuItem
                                                             onClick={() =>
                                                                 i18n.changeLanguage('en')

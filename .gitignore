@@ -38,3 +38,6 @@ yarn.lock
 
 # Supabase
 apps/backend
+
+# windsurf rules
+.windsurfrules

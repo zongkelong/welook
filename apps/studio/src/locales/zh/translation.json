@@ -1,0 +1,166 @@
+{
+    "pricing": {
+        "plans": {
+            "basic": {
+                "name": "Onlook 基础版",
+                "price": "$0/月",
+                "description": "轻松进行代码原型设计和实验。",
+                "features": [
+                    "可视化代码编辑器访问",
+                    "无限项目",
+                    "每天 {{dailyMessages}} 条 AI 聊天消息",
+                    "每月 {{monthlyMessages}} 条 AI 消息",
+                    "每次聊天限制 1 张截图"
+                ]
+            },
+            "pro": {
+                "name": "Onlook 专业版",
+                "price": "$20/月",
+                "description": "无限创意 - 使用 AI 构建精美网站。",
+                "features": [
+                    "可视化代码编辑器访问",
+                    "无限项目",
+                    "无限每日 AI 聊天消息",
+                    "无限每月聊天",
+                    "每次聊天多张截图",
+                    "1 个免费的 Onlook 托管自定义域名",
+                    "优先支持"
+                ]
+            }
+        },
+        "titles": {
+            "choosePlan": "选择您的计划",
+            "proMember": "感谢您成为专业会员！"
+        },
+        "buttons": {
+            "currentPlan": "当前计划",
+            "getPro": "获取专业版",
+            "manageSubscription": "管理订阅"
+        },
+        "loading": {
+            "checkingPayment": "正在检查付款..."
+        },
+        "toasts": {
+            "checkingOut": {
+                "title": "正在结账",
+                "description": "您将被重定向到 Stripe 完成付款。"
+            },
+            "redirectingToStripe": {
+                "title": "重定向到 Stripe",
+                "description": "您将被重定向到 Stripe 管理您的订阅。"
+            },
+            "error": {
+                "title": "错误",
+                "description": "无法启动结账流程。请重试。"
+            }
+        },
+        "footer": {
+            "unusedMessages": "未使用的聊天消息不会结转到下个月"
+        }
+    },
+    "editor": {
+        "toolbar": {
+            "undo": "撤销",
+            "redo": "重做",
+            "preview": "预览",
+            "save": "保存",
+            "publish": "发布"
+        },
+        "contextMenu": {
+            "inspect": "检查",
+            "edit": "编辑",
+            "delete": "删除",
+            "cut": "剪切",
+            "copy": "复制",
+            "paste": "粘贴",
+            "group": "组合",
+            "ungroup": "取消组合"
+        },
+        "chat": {
+            "button": "与 AI 对话",
+            "input": "聊天消息输入",
+            "placeholder": "输入您的消息...",
+            "send": "发送",
+            "thinking": "思考中...",
+            "error": "发生错误",
+            "retry": "重试",
+            "copy": "复制",
+            "copied": "已复制",
+            "revert": "还原"
+        },
+        "settings": {
+            "title": "设置",
+            "theme": {
+                "label": "主题",
+                "light": "浅色",
+                "dark": "深色",
+                "system": "跟随系统"
+            },
+            "language": {
+                "label": "语言",
+                "en": "English",
+                "ja": "日本語",
+                "zh": "中文"
+            },
+            "dimensions": {
+                "label": "尺寸",
+                "width": "宽度",
+                "height": "高度",
+                "device": "设备"
+            }
+        },
+        "layers": {
+            "pages": {
+                "search": "搜索页面",
+                "create": "创建页面",
+                "placeholder": "输入页面名称，如 about-us 或动态页面 [blog]"
+            },
+            "images": {
+                "search": "搜索图片"
+            }
+        },
+        "windows": {
+            "minimize": "最小化",
+            "maximize": "最大化",
+            "close": "关闭"
+        }
+    },
+    "auth": {
+        "signIn": "登录",
+        "signOut": "退出",
+        "loading": "加载中...",
+        "error": "登录时发生错误"
+    },
+    "projects": {
+        "create": {
+            "name": {
+                "label": "项目名称",
+                "placeholder": "我的新项目"
+            },
+            "url": {
+                "label": "项目 URL",
+                "placeholder": "http://localhost:3000"
+            },
+            "commands": {
+                "install": "安装命令",
+                "run": "运行命令",
+                "build": "构建命令"
+            }
+        },
+        "settings": {
+            "title": "项目设置",
+            "name": {
+                "label": "项目名称",
+                "placeholder": "输入项目名称"
+            }
+        }
+    },
+    "prompts": {
+        "placeholder": "粘贴参考截图，编写需求，发挥创意..."
+    },
+    "domain": {
+        "verification": {
+            "placeholder": "输入您的域名"
+        }
+    }
+}

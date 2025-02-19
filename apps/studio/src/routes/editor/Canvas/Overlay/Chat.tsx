@@ -7,6 +7,7 @@ import { Textarea } from '@onlook/ui/textarea';
 import { cn } from '@onlook/ui/utils';
 import { observer } from 'mobx-react-lite';
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const SPACING = {
     base: 8,
@@ -53,6 +54,7 @@ export const OverlayChat = observer(
         const [isComposing, setIsComposing] = useState(false);
         const textareaRef = useRef<HTMLTextAreaElement>(null);
         const prevChatPositionRef = useRef<{ x: number; y: number } | null>(null);
+        const { t } = useTranslation();
 
         // Add effect to reset input state when elementId changes
         useEffect(() => {
@@ -148,7 +150,9 @@ export const OverlayChat = observer(
                             className="rounded-lg hover:text-foreground-primary transition-colors px-2.5 py-1.5 flex flex-row items-center gap-2 w-full"
                         >
                             <Icons.Sparkles className="w-4 h-4" />
-                            <span className="text-miniPlus whitespace-nowrap">Chat with AI</span>
+                            <span className="text-miniPlus whitespace-nowrap">
+                                {t('editor.chat.button')}
+                            </span>
                         </button>
                     ) : (
                         // Input Field
@@ -174,7 +178,7 @@ export const OverlayChat = observer(
                                 <Icons.CrossS className="h-4 w-4 text-foreground-secondary group-hover:text-foreground transition-colors" />
                             </Button>
                             <Textarea
-                                aria-label="Chat message input"
+                                aria-label={t('editor.chat.input')}
                                 ref={textareaRef}
                                 className={cn(
                                     'w-full text-xs break-words p-1.5 focus-visible:ring-0 resize-none shadow-none border-[0.5px] rounded-lg',
@@ -198,7 +202,7 @@ export const OverlayChat = observer(
                                             textareaRef.current.scrollHeight;
                                     }
                                 }}
-                                placeholder="Type your message..."
+                                placeholder={t('editor.chat.placeholder')}
                                 style={{
                                     resize: 'none',
                                     minHeight: DIMENSIONS.singleLineHeight,
