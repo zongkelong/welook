@@ -34,7 +34,8 @@
         "publish_tag": "./scripts/publish_tag.sh",
         "remove_tag": "./scripts/remove_tag.sh",
         "download_bun": "bun run ./scripts/download_bun.ts",
-        "prepare": "husky"
+        "prepare": "husky",
+        "postinstall": "patch-package"
     },
     "repository": {
         "type": "git",
@@ -45,6 +46,10 @@
     },
     "devDependencies": {
         "extract-zip": "^2.0.1",
-        "husky": "^9.1.6"
+        "husky": "^9.1.6",
+        "patch-package": "^8.0.0"
+    },
+    "dependencies": {
+        "is-plain-obj": "4.1.0"
     }
 }
