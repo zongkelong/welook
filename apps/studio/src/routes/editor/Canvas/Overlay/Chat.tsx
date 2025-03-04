@@ -49,7 +49,7 @@ const DEFAULT_INPUT_STATE = {
 export const OverlayChat = observer(
     ({ selectedEl, elementId }: { selectedEl: ClickRectState | null; elementId: string }) => {
         const editorEngine = useEditorEngine();
-        const isInteractMode = editorEngine.mode === EditorMode.INTERACT;
+        const isPreviewMode = editorEngine.mode === EditorMode.PREVIEW;
         const [inputState, setInputState] = useState(DEFAULT_INPUT_STATE);
         const [isComposing, setIsComposing] = useState(false);
         const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -102,7 +102,7 @@ export const OverlayChat = observer(
 
         if (
             !selectedEl ||
-            isInteractMode ||
+            isPreviewMode ||
             editorEngine.chat.isWaiting ||
             editorEngine.chat.streamingMessage
         ) {
@@ -118,7 +118,7 @@ export const OverlayChat = observer(
 
         const containerStyle: React.CSSProperties = {
             position: 'fixed',
-            top: selectedEl.top - 8,
+            top: Math.max(74 + 8, selectedEl.top - 8),
             left: selectedEl.left + selectedEl.width / 2,
             transform: 'translate(-50%, 0)',
             transformOrigin: 'center center',
@@ -151,7 +151,7 @@ export const OverlayChat = observer(
                         >
                             <Icons.Sparkles className="w-4 h-4" />
                             <span className="text-miniPlus whitespace-nowrap">
-                                {t('editor.chat.button')}
+                                {t('editor.panels.edit.tabs.chat.miniChat.button')}
                             </span>
                         </button>
                     ) : (
@@ -178,7 +178,7 @@ export const OverlayChat = observer(
                                 <Icons.CrossS className="h-4 w-4 text-foreground-secondary group-hover:text-foreground transition-colors" />
                             </Button>
                             <Textarea
-                                aria-label={t('editor.chat.input')}
+                                aria-label="Chat message input"
                                 ref={textareaRef}
                                 className={cn(
                                     'w-full text-xs break-words p-1.5 focus-visible:ring-0 resize-none shadow-none border-[0.5px] rounded-lg',
@@ -202,7 +202,7 @@ export const OverlayChat = observer(
                                             textareaRef.current.scrollHeight;
                                     }
                                 }}
-                                placeholder={t('editor.chat.placeholder')}
+                                placeholder="Type your message..."
                                 style={{
                                     resize: 'none',
                                     minHeight: DIMENSIONS.singleLineHeight,
